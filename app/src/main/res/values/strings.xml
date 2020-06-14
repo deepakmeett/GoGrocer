@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">GoGrocer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_description">Image Description</string>
+    <string name="truck_s_current_location">Truck\'s current location</string>
+    <string name="lajpat_nagar_new_delhi">Lajpat Nagar, New Delhi</string>
+    <string name="static_cardview"><![CDATA[Static CardView ->]]></string>
+    <string name="popular">Popular</string>
+    <string name="recent">Recent</string>
+    <string name="offers">Offers</string>
+    <string name="what_s_new">What\'s New</string>
+    <string name="top_selling">TOP_SELLING</string>
+    <string name="type">Type</string>
+    <string name="premier">premier</string>
+    <string name="storage_life">Storage Life</string>
+    <string name="_3_days">3 Days</string>
+    <string name="qty">QTY</string>
+    <string name="_3_units">3 units</string>
+    <string name="rs_118_00">Rs. 118.00</string>
+    <string name="rs_90_40">Rs. 90.40</string>
+    <string name="add">ADD</string>
+    <string name="banner_id">Banner_ID</string>
+    <string name="banner_name">Banner_Name</string>
+</resources>
