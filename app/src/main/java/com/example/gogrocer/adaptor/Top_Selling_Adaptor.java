@@ -12,18 +12,18 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.gogrocer.R;
 import com.example.gogrocer.api.Api;
-import com.example.gogrocer.model.Top_Selling_Model;
+import com.example.gogrocer.model.Get_Data_Model;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 public class Top_Selling_Adaptor extends RecyclerView.Adapter<Top_Selling_Adaptor.ViewHolder> {
     
     Context context;
-    List<Top_Selling_Model.Datum> list;
+    List<Get_Data_Model.Datum> list;
 
     int num = 1;
 
-    public Top_Selling_Adaptor(Context context, List<Top_Selling_Model.Datum> list) {
+    public Top_Selling_Adaptor(Context context, List<Get_Data_Model.Datum> list) {
         this.context = context;
         this.list = list;
     }
@@ -38,7 +38,7 @@ public class Top_Selling_Adaptor extends RecyclerView.Adapter<Top_Selling_Adapto
 
     @Override
     public void onBindViewHolder(@NonNull final Top_Selling_Adaptor.ViewHolder holder, int position) {
-        Top_Selling_Model.Datum model = list.get( position );
+        Get_Data_Model.Datum model = list.get( position );
         if (model.getProductName()!=null){
             holder.productName.setText( model.getProductName() );
         }

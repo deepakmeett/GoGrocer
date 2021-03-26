@@ -45,10 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 .baseUrl( Api.BASE_URL )
                 .addConverterFactory( GsonConverterFactory.create() )
                 .build();
-        
         Api api = retrofit.create( Api.class );
         final Call<Banner_Model> call = api.getBanner();
-        
         call.enqueue( new Callback<Banner_Model>() {
             @Override
             public void onResponse(Call<Banner_Model> call, Response<Banner_Model> response) {

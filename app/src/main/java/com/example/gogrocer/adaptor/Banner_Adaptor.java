@@ -52,6 +52,13 @@ public class Banner_Adaptor extends RecyclerView.Adapter<Banner_Adaptor.ViewHold
                     .fit()
                     .into( holder.bannerImage );
         }
+        
+        holder.bannerImage.setOnClickListener( new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                
+            }
+        } );
     }
 
     @Override

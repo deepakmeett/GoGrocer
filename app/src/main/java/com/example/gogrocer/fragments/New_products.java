@@ -13,9 +13,9 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.gogrocer.R;
-import com.example.gogrocer.adaptor.New_Adaptor;
+import com.example.gogrocer.adaptor.Top_Selling_Adaptor;
 import com.example.gogrocer.api.Api;
-import com.example.gogrocer.model.New_Model;
+import com.example.gogrocer.model.Get_Data_Model;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -54,17 +54,17 @@ public class New_products extends Fragment {
 
 
         Api api = retrofit.create( Api.class );
-        final Call<New_Model> call = api.getNew();
+        final Call<Get_Data_Model> call = api.getData( "whatsnew");
 
-        call.enqueue( new Callback<New_Model>() {
+        call.enqueue( new Callback<Get_Data_Model>() {
             @Override
-            public void onResponse(Call<New_Model> call, Response<New_Model> response) {
-                New_Model list = response.body();
-                recyclerView.setAdapter( new New_Adaptor( getActivity(), list.getData() ) );
+            public void onResponse(Call<Get_Data_Model> call, Response<Get_Data_Model> response) {
+                Get_Data_Model list = response.body();
+                recyclerView.setAdapter( new Top_Selling_Adaptor( getActivity(), list.getData() ) );
             }
 
             @Override
-            public void onFailure(Call<New_Model> call, Throwable t) {
+            public void onFailure(Call<Get_Data_Model> call, Throwable t) {
                 Toast.makeText( getActivity(), t.getMessage(), Toast.LENGTH_SHORT ).show();
             }
         } );

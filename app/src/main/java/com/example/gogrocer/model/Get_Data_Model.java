@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class Recent_Model {
+public class Get_Data_Model {
 
     @SerializedName("status")
     @Expose

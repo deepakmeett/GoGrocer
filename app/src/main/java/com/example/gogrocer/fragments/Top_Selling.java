@@ -12,13 +12,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.gogrocer.MainActivity;
 import com.example.gogrocer.R;
-import com.example.gogrocer.adaptor.Banner_Adaptor;
 import com.example.gogrocer.adaptor.Top_Selling_Adaptor;
 import com.example.gogrocer.api.Api;
-import com.example.gogrocer.model.Banner_Model;
-import com.example.gogrocer.model.Top_Selling_Model;
+import com.example.gogrocer.model.Get_Data_Model;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -58,17 +55,17 @@ public class Top_Selling extends Fragment {
 
 
         Api api = retrofit.create( Api.class );
-        final Call<Top_Selling_Model> call = api.getTopSelling();
+        final Call<Get_Data_Model> call = api.getData( "top_selling");
         
-        call.enqueue( new Callback<Top_Selling_Model>() {
+        call.enqueue( new Callback<Get_Data_Model>() {
             @Override
-            public void onResponse(Call<Top_Selling_Model> call, Response<Top_Selling_Model> response) {
-                Top_Selling_Model list = response.body();
+            public void onResponse(Call<Get_Data_Model> call, Response<Get_Data_Model> response) {
+                Get_Data_Model list = response.body();
                 recyclerView.setAdapter( new Top_Selling_Adaptor(getActivity(), list.getData() ) );
             }
 
             @Override
-            public void onFailure(Call<Top_Selling_Model> call, Throwable t) {
+            public void onFailure(Call<Get_Data_Model> call, Throwable t) {
                 Toast.makeText( getActivity(), t.getMessage(), Toast.LENGTH_SHORT ).show();
             }
         } );
